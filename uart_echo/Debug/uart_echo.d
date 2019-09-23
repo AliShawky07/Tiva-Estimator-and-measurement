@@ -17,16 +17,16 @@ uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/fpu.h
 uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/gpio.h
 uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/pin_map.h
 uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/rom.h
+uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/sysctl.h
+uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/uart.h
+uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/utils/uartstdio.h
+uart_echo.obj: C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/stdarg.h
+uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_ints.h
 uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/interrupt.h
 uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/timer.h
 uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_gpio.h
 uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_timer.h
 uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_uart.h
-uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_ints.h
-uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/sysctl.h
-uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/uart.h
-uart_echo.obj: C:/ti/TivaWare_C_Series-2.1.4.178/utils/uartstdio.h
-uart_echo.obj: C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/stdarg.h
 
 ../uart_echo.c: 
 C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/stdint.h: 
@@ -45,13 +45,13 @@ C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/fpu.h:
 C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/gpio.h: 
 C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/pin_map.h: 
 C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/rom.h: 
+C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/sysctl.h: 
+C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/uart.h: 
+C:/ti/TivaWare_C_Series-2.1.4.178/utils/uartstdio.h: 
+C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/stdarg.h: 
+C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_ints.h: 
 C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/interrupt.h: 
 C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/timer.h: 
 C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_gpio.h: 
 C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_timer.h: 
 C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_uart.h: 
-C:/ti/TivaWare_C_Series-2.1.4.178/inc/hw_ints.h: 
-C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/sysctl.h: 
-C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/uart.h: 
-C:/ti/TivaWare_C_Series-2.1.4.178/utils/uartstdio.h: 
-C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/stdarg.h: 

@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker PC v18.12.1                    
 ******************************************************************************
->> Linked Mon Sep 23 15:58:06 2019
+>> Linked Mon Sep 23 16:03:51 2019
 
 OUTPUT FILE NAME:   <uart_echo.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 000002e9

@@ -32,6 +32,11 @@
 #include "driverlib/gpio.h"
 #include "driverlib/pin_map.h"
 #include "driverlib/rom.h"
+#include "driverlib/sysctl.h"
+#include "driverlib/uart.h"
+#include "utils/uartstdio.h"
+#include "inc/hw_ints.h"
+#include "driverlib/debug.h"
 #include "driverlib/interrupt.h"
 #include "driverlib/timer.h"
 #include "inc/hw_gpio.h"
@@ -40,11 +45,6 @@
 #include "inc/hw_uart.h"
 #include "inc/hw_ints.h"
 #include "driverlib/interrupt.h"
-#include "driverlib/sysctl.h"
-#include "driverlib/uart.h"
-#include "utils/uartstdio.h"
-#include "inc/hw_ints.h"
-#include "driverlib/debug.h"
 
 
 //*****************************************************************************
@@ -83,6 +83,65 @@ volatile uint32_t  seconds;
 volatile int32_t fitch = 0;
 volatile uint32_t  CurrentTime;
 
+
+void
+Timer0IntHandler(void)
+{
+    char cOne, cTwo;
+
+    ROM_TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+
+
+    seconds++;
+    if(seconds>=60)
+    {
+        CurrentTime++;
+        seconds=0;
+    }
+
+    ROM_IntMasterDisable();
+    cOne = HWREGBITW(&g_ui32Flags, 0) ? '1' : '0';
+    cTwo = HWREGBITW(&g_ui32Flags, 1) ? '1' : '0';
+    ROM_IntMasterEnable();
+}
+
+void Timers_Init(void)
+{
+
+
+    ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
+
+    ROM_IntMasterEnable();
+
+    ROM_SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_XTAL_16MHZ |
+                       SYSCTL_OSC_MAIN);
+
+    ROM_TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC);
+
+    ROM_TimerLoadSet(TIMER0_BASE, TIMER_A, ROM_SysCtlClockGet());
+
+    ROM_IntEnable(INT_TIMER0A);
+
+    ROM_TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+
+    ROM_TimerEnable(TIMER0_BASE, TIMER_A);
+
+
+}
+
+void GetAndSendInitialTime(void)
+{
+    CurrentTime=  ( UARTCharGet(UART0_BASE) - (48) ) ;
+
+
+
+    CurrentTime = ( (CurrentTime) * (10) ) + ( UARTCharGet(UART0_BASE) -(48) ) ;
+
+
+    UARTCharPut(UART1_BASE,(CurrentTime));
+
+
+}
 void
 UART1_Configure(void)
 {
